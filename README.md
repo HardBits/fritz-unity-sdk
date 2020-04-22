@@ -1,4 +1,8 @@
-# Fritz Unity SDK
+# [DEPRECATED] Fritz Unity SDK
+
+**DEPRECATED**
+
+As of April 20th, 2020, we will no longer be supporting the Fritz Unity SDK. We are deeply grateful to those who have contributed fixes to keep the SDK working as new versions of Unity and native OSs become available. We will be leaving this repository available, but active development will stop. We hope to offer more robust support in the future.
 
 ## Installation instructions
 
