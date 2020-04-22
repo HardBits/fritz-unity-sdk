@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -51,9 +51,7 @@ static class FritzConfigurationIMGUIRegister
                 if (GUILayout.Button("Download", GUILayout.Width(mediumButtonSize)))
                 {
                     var sdkVersion = settings.FindProperty("sdkVersion").stringValue;
-                    var download = new DownloadFramework(sdkVersion, "FritzBase");
-                    download.Download();
-                    download = new DownloadFramework(sdkVersion, "FritzVisionPoseModel");
+                    var download = new DownloadFramework(sdkVersion);
                     download.Download();
                 }
 
@@ -99,8 +97,7 @@ public class FritzConfiguration : ScriptableObject
     // Required Frameworks
     public FritzFramework[] frameworks =
     {
-        new FritzFramework("FritzVision"),
-        new FritzFramework("FritzVisionPoseModel")
+        new FritzFramework("Fritz")
     };
 
     internal static FritzConfiguration GetOrCreateSettings()
@@ -115,7 +112,7 @@ public class FritzConfiguration : ScriptableObject
         if (settings == null)
         {
             settings = ScriptableObject.CreateInstance<FritzConfiguration>();
-            settings.sdkVersion = "4.1.1";
+            settings.sdkVersion = "5.3.1";
 
             AssetDatabase.CreateAsset(settings, k_FritzConfigurationPath);
             AssetDatabase.SaveAssets();
